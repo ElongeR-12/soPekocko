@@ -2,14 +2,17 @@
 const express = require('express');
 //express() method to create express app
 const app = express();
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-    next();
-  });
-app.use((req,res)=>{
-    res.json({message: 'votre requête sur application express fonctionne'})
-})
+const database = require('./database');
+// const Sauce = require('./models/sauce');
+const User = require('./models/user');
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+const cors = require('cors');
+app.use(cors());
+// const saucesRoutes = require('./models/sauce');
+const userRoutes = require('./routes/user');
+
+// app.use('/api/sauces', saucesRoutes);
+app.use('/api/auth', userRoutes);
 
 module.exports = app;
