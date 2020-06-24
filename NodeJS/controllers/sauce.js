@@ -102,3 +102,8 @@ exports.getAllSauces = (req, res, next) => {
     }
   );
 };
+
+exports.createSauceState = (req, res, next) => {
+  
+  
+}
