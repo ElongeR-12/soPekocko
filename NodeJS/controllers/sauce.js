@@ -145,6 +145,32 @@ exports.createSauceState = (req, res, next) => {
           _id: sauceId
         })
         .then((sauce) => {
+          Sauce.updateOne({
+            _id: sauceId
+          }, {
+            $push: {
+              usersDisliked: user
+            },
+            $inc: {
+              dislikes: 1
+            },
+          })
+          .then(() => res.status(200).json({
+            message: 'userDisliker added, dislikes incremented '
+          }))
+          .catch((error) => res.status(400).json({
+            error
+          }))
+        })
+        .catch((error) => res.status(404).json({
+          error
+        }))
+      break;
+    default:
+      Sauce.findOne({
+          _id: sauceId
+        })
+        .then((sauce) => {
           if (sauce.usersLiked.includes(user)) {
             Sauce.updateOne({
                 _id: sauceId
@@ -181,32 +207,6 @@ exports.createSauceState = (req, res, next) => {
                 error
               }))
           }
-        })
-        .catch((error) => res.status(404).json({
-          error
-        }))
-      break;
-    default:
-      Sauce.findOne({
-          _id: sauceId
-        })
-        .then((sauce) => {
-          Sauce.updateOne({
-              _id: sauceId
-            }, {
-              $push: {
-                usersDisliked: user
-              },
-              $inc: {
-                dislikes: 1
-              },
-            })
-            .then(() => res.status(200).json({
-              message: 'disliker added, dislikes incremented '
-            }))
-            .catch((error) => res.status(400).json({
-              error
-            }))
         })
         .catch((error) => res.status(404).json({
           error
