@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://Elonge1:Elonge@cluster-p-six-oc-kum0q.mongodb.net/Elonge1?retryWrites=true&w=majority',
+const dotenv = require('dotenv').config();
+let db = process.env.DB_USER;
+const pwd = process.env.DB_PASS;
+mongoose.connect(`mongodb+srv://${db}:${pwd}@cluster-p-six-oc-kum0q.mongodb.net/${pwd}?retryWrites=true&w=majority`,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
