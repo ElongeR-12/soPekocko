@@ -9,3 +9,5 @@
     * add an IP adress in network access
 *  Customise application using schema types mongoose
     * documentation (https://mongoosejs.com/docs/schematypes.html#what-is-a-schema-type)
+*  Improve pasword security
+    * documentation (https://www.npmjs.com/package/password-validator)
