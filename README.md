@@ -11,3 +11,5 @@
     * documentation (https://mongoosejs.com/docs/schematypes.html#what-is-a-schema-type)
 *  Improve pasword security
     * documentation (https://www.npmjs.com/package/password-validator)
+*  Manage cookies parameters 
+    * documentation (https://www.npmjs.com/package/express-session)
