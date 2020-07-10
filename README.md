@@ -13,3 +13,5 @@
     * documentation (https://www.npmjs.com/package/password-validator)
 *  Manage cookies parameters 
     * documentation (https://www.npmjs.com/package/express-session)
+*  Prevent brute force using Express rate-limiter
+    * documentation (https://www.npmjs.com/package/express-limiter#express-rate-limiter)
