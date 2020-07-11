@@ -15,3 +15,7 @@
     * documentation (https://www.npmjs.com/package/express-session)
 *  Prevent brute force using Express rate-limiter
     * documentation (https://www.npmjs.com/package/express-limiter#express-rate-limiter)
+*  Use helmet
+    * documentation
+        * http://expressjs.com/en/advanced/best-practice-security.html#use-helmet
+        * https://www.npmjs.com/package/helmet
