@@ -7,15 +7,15 @@
     * create new project 
     * add a database new user in database access
     * add an IP adress in network access
-*  Customise application using schema types mongoose
+##  Customise application using schema types mongoose
     * documentation (https://mongoosejs.com/docs/schematypes.html#what-is-a-schema-type)
-*  Improve pasword security
+##  Improve pasword security
     * documentation (https://www.npmjs.com/package/password-validator)
-*  Manage cookies parameters 
+##  Manage cookies parameters 
     * documentation (https://www.npmjs.com/package/express-session)
-*  Prevent brute force using Express rate-limiter
+##  Prevent brute force using Express rate-limiter
     * documentation (https://www.npmjs.com/package/express-limiter#express-rate-limiter)
-*  Use helmet
+##  Use helmet
     * documentation
         * http://expressjs.com/en/advanced/best-practice-security.html#use-helmet
         * https://www.npmjs.com/package/helmet
