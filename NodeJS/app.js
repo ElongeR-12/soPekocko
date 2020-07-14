@@ -14,7 +14,7 @@ app.use(session({
     saveUninitialized: false,
     rolling: true,
     resave: false,
-    name: 'session',
+    name: process.env.SESSION_NAME,
     cookie: {
         httpOnly: true,
         secure: true, /*when using https*/
