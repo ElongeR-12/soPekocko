@@ -10,13 +10,10 @@ const cors = require('cors');
 const session = require('express-session');
 const helmet = require("helmet");
 app.use(session({
-    secret: process.env.SECRET,
-    saveUninitialized: false,
-    rolling: true,
-    resave: false,
-    name: process.env.SESSION_NAME,
+    secret: process.env.SECRET,// used to sign the session ID cookie
+    name: process.env.SESSION_NAME,//change session cookie name
     cookie: {
-        httpOnly: true,
+        httpOnly: true,// prevent client side Javascript to see the cookie
         secure: true, /*when using https*/
         maxAge: 60 * 60 * 1000,
         domain:'http://localhost:3000' 
