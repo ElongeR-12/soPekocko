@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { Sauce } from '../models/Sauce.model';
 import { SaucesService } from '../services/sauces.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './single-sauce.component.html',
   styleUrls: ['./single-sauce.component.scss']
 })
-export class SingleSauceComponent implements OnInit {
+export class SingleSauceComponent implements AfterContentInit {
 
   loading: boolean;
   sauce: Sauce;
@@ -24,7 +24,7 @@ export class SingleSauceComponent implements OnInit {
               private auth: AuthService,
               private router: Router) { }
 
-  ngOnInit() {
+  ngAfterContentInit() {
     this.userId = this.auth.getUserId();
     this.loading = true;
     this.route.params.subscribe(
